@@ -1,0 +1,35 @@
+# eureka集群配置
+spring:
+  application:
+    name: center.eureka.server
+
+eureka:
+  instance:
+    preferIpAddress: false
+    leaseExpirationDurationInSeconds: 15
+  client:
+    eurekaServerURLContext: /eureka
+    registerWithEureka: true
+    fetchRegistry: true
+---
+spring:
+  profiles: peer1,default
+server:
+  port: 9001
+eureka:
+  instance:
+    hostname: center.eureka.server.peer1
+  client:
+    serviceUrl:
+      defaultZone: http://center.eureka.server.peer2:9002/eureka/
+---
+spring:
+  profiles: peer2
+server:
+  port: 9002
+eureka:
+  instance:
+    hostname: center.eureka.server.peer2
+  client:
+    serviceUrl:
+      defaultZone: http://center.eureka.server.peer1:9001/eureka/
