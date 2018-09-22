@@ -1,0 +1,5 @@
+spring.application.name: consumer-feign
+server.port: 9014
+eureka.client.serviceUrl.defaultZone: http://center.eureka.server:9000/eureka/
+## 必须开启,B版本之前是默认开启的，D版本以后默认false
+feign.hystrix.enabled: true
