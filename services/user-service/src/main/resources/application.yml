@@ -8,3 +8,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://center.eureka.server:9000/eureka/
+
+# 关闭 actuator 的安全认证
+management.security.enabled: false
