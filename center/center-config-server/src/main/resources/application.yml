@@ -1,0 +1,20 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: center-config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/crrrrrw/spring-cloud-practice
+          search-paths: /config-repo
+          username:
+          password:
+
+# 增加注册中心，服务化配置中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://center.eureka.server:9000/eureka/
