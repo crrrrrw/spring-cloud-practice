@@ -18,3 +18,16 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://center.eureka.server:9000/eureka/
+
+management:
+  security:
+     enabled: false
+
+# 开启消息跟踪
+spring.cloud.bus.trace.enabled: true
+
+spring.rabbitmq:
+  host: 127.0.0.1
+  port: 5672
+  username: guest
+  password: guest
