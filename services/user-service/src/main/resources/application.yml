@@ -11,3 +11,12 @@ eureka:
 
 # 关闭 actuator 的安全认证
 management.security.enabled: false
+
+# 开启消息跟踪
+spring.cloud.bus.trace.enabled: true
+
+spring.rabbitmq:
+  host: 127.0.0.1
+  port: 5672
+  username: guest
+  password: guest
