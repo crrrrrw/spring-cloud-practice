@@ -12,7 +12,8 @@
 │       
 ├── monitor
 │   ├── hystrix-turbine(Hystrix控制台,基于turbine)
-│   └── monitor-hystrix-dashboard(Hystrix控制台)
+│   ├── monitor-hystrix-dashboard(Hystrix控制台)
+│   └── zipkin-server(Zipkin链路跟踪服务)
 │       
 └── services
     ├── consumer-feign(服务消费者，集成feign)
@@ -29,9 +30,10 @@
  --- | ---
  center-eureka-server | 9000
  center-config-server | 9001
- gateway-zuul | 9102
- hystrix-turbine | 9101
  monitor-hystrix-dashboard | 9100
+ hystrix-turbine | 9101
+ gateway-zuul | 9102
+ zipkin-server | 9103
  consumer-feign | 9012
  consumer-feign-hystrix | 9014
  consumer-ribbon | 9011
@@ -43,11 +45,13 @@
 ```
 127.0.0.1 center.eureka.server
 127.0.0.1 center.config.server
+127.0.0.1 zipkin-server
 ```
 ### 2.启动顺序
 依次启动：
 ```java
 1.center-eureka-server -> 2.center-config-server -> 
 3.gateway-zuul -> 4.monitor-hystrix-dashboard -> 
-5.user-service -> 6. consumer-*
+5.zipkin-server ->
+6.user-service -> 7. consumer-*
 ```
