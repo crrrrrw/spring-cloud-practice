@@ -1,0 +1,19 @@
+spring.cloud:
+  config:
+    # uri: http://center.config.server:9001  # 配置中心服务地址
+    discovery:
+      enabled: true  # 开启 config服务发现
+      serviceId: center-config-server  # 指定server端的name，即配置中心的 spring.application.name
+
+    name: crw-config  # git中配置文件的名字(应用名)
+    label: master       # git仓库的分支名
+    profile: dev       # git中配置文件的环境
+    enabled: true       # 是否开启配置中心
+    fail-fast: false    # 不可用时失败策略：快速失败
+    retry:
+      max-attempts: 6   # 配置异常时，重试的次数
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://center.eureka.server:9000/eureka/
