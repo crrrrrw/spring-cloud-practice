@@ -22,4 +22,4 @@ spring.rabbitmq:
   password: guest
 
 spring.zipkin:
-  base-url: http://zipkin-server:9102
+  base-url: http://zipkin-server:9103

@@ -3,4 +3,4 @@ server.port: 9012
 eureka.client.serviceUrl.defaultZone: http://center.eureka.server:9000/eureka/
 
 spring.zipkin:
-  base-url: http://zipkin-server:9102
+  base-url: http://zipkin-server:9103
